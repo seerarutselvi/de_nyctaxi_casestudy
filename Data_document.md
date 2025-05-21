@@ -1,0 +1,50 @@
+### Analytical Questions :- 
+
+## 1)Which zones have the highest pickup and dropoff frequency?
+## 2)What percentage of trips are paid with cash vs. card?
+## 3)What is the average fare amount per trip?
+
+
+
+### Table creation 
+
+```sql
+
+CREATE TABLE location_lookup(
+    LocationID Varchar(50),
+    Borough Varchar(50),
+    Zone Varchar(50),
+    service_zone Varchar(50)
+);
+
+
+CREATE TABLE lpep_trip_data (
+    trip_id SERIAL PRIMARY KEY,
+    VendorID INT,  
+    lpep_pickup_datetime TIMESTAMP,
+    lpep_dropoff_datetime TIMESTAMP,
+    store_and_fwd_flag CHAR(1),  
+    RatecodeID INT,              
+    PULocationID INT,            
+    DOLocationID INT,            
+    passenger_count INT,
+    trip_distance DECIMAL(6, 2), 
+    fare_amount DECIMAL(8, 2),
+    extra DECIMAL(6, 2),
+    mta_tax DECIMAL(6, 2),
+    tip_amount DECIMAL(6, 2),
+    tolls_amount DECIMAL(6, 2),
+    improvement_surcharge DECIMAL(6, 2),
+    total_amount DECIMAL(8, 2),
+    payment_type INT,
+    fee DECIMAL(8,2),                       
+    congestion_surcharge DECIMAL(6, 2),
+    cbd_congestion_fee DECIMAL(6, 2),
+    trip_color Varchar(20)
+);
+
+```
+
+## 
+
+![image](pipeline.jpg)
